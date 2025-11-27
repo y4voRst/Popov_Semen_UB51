@@ -40,3 +40,22 @@ for i in range(len(a)):
     st += s + '\n'
 f = open("Вывод2.txt", "w")
 f.write(st)
+# 3-й
+def getMtrx(name):
+    mtrx = []
+    with open(name, "r") as f:
+        for line in f:
+            row = [int(x) for x in line.split()]
+            mtrx.append(row)
+    return mtrx
+
+k = 3
+maks = 0
+b = 0
+for i in getMtrx("Попов Семён Максимович_УБ-51_vvod3.txt"):
+    for j in i:
+        if j % k == 0:
+            b += 1
+        maks = max(j, maks)
+f = open("Вывод3.txt", "w", encoding="utf-8")
+f.write(str('количество элементов кратных k: ' + str(b) + 'наибольший из этих элементов: ' + str(maks)))
