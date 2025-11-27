@@ -59,3 +59,39 @@ for i in getMtrx("Попов Семён Максимович_УБ-51_vvod3.txt")
         maks = max(j, maks)
 f = open("Вывод3.txt", "w", encoding="utf-8")
 f.write(str('количество элементов кратных k: ' + str(b) + 'наибольший из этих элементов: ' + str(maks)))
+# 4-й
+from math import *
+def getMtrx(name):
+    mtrx = []
+    with open(name, "r") as f:
+        for line in f:
+            row = [int(x) for x in line.split()]
+            mtrx.append(row)
+    return mtrx
+def vivodMtrx(mtrx,name):
+    f = open(name, "w")
+    for ln in mtrx:
+        for w in ln:
+            f.write(str(w) + " ")
+        f.write('\n')
+
+maks = 0
+stol, strok = 0, 0
+a = getMtrx("Попов Семён Максимович_УБ-51_vvod4.txt")
+for i in a:
+    for j in i:
+        if abs(j) > maks:
+            maks = abs(j)
+            stol = a.index(i)
+            strok = i.index(j)
+b = []
+for i in range(len(a)):
+    if i == strok:
+        continue
+    row = []
+    for j in range(len(a)):
+        if j == stol:
+            continue
+        row.append(a[i][j])
+    b.append(row)
+vivodMtrx(b, "Вывод4.txt")
