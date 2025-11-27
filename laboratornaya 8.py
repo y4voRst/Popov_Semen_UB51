@@ -52,3 +52,25 @@ for i in a:
             b += 1
         maks = max(j, maks)
 print('количество элементов кратных k: ',b, 'наибольший из этих элементов: ', maks)
+# номер 2 вариант 9
+from math import *
+a = [[54, 1, -2, 25, 1], [1, -15, 1, 1, 93], [37, 1, 100, 1, -1], [1, 80, 1, -72, 5], [53, -2, 1, 9, 1]]
+maks = 0
+stol, strok = 0, 0
+for i in a:
+    for j in i:
+        if abs(j) > maks:
+            maks = abs(j)
+            stol = a.index(i)
+            strok = i.index(j)
+b = []
+for i in range(len(a)):
+    if i == strok:
+        continue
+    row = []
+    for j in range(len(a)):
+        if j == stol:
+            continue
+        row.append(a[i][j])
+    b.append(row)
+print(b)
