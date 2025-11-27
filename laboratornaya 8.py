@@ -15,32 +15,22 @@ for i in matr:
         st1 = i
 print("строка с мин числом: " + str(st) + "сумма строки: " + str(minSum))
 # номер 2 вариант 4
-n = 3
-a = []
-for i in range(n):
-    b = []
-    for j in range(n):
-        print('Введите [',i,',',j,'] элемент')
-        b.append(int(input()))
-    a.append(b)
-for i in range(n):
-    for j in range(n):
+a = [[1, -2, 4], [3, 1, -2], [1, 1, -4]]
+for i in range(len(a)):
+    for j in range(len(a)):
         print(a[i][j], end =' ')
     print()
 
-for i in range(n):
-    for j in range(n):
+for i in range(len(a)):
+    for j in range(len(a)):
         if a[i][j]<0: a[i][j]=0
         elif a[i][j]>0: a[i][j]=1
 
-def diag(matr):
-    s = []
-    n = len(matr)
-    for i in range(n):
-        for j in range(i):  
-            print(matr[i][j])
-    return "готово"
-print(diag(a))
+for i in range(len(a)):
+    s = ''
+    for j in range(0, i+1):
+        s += str(a[i][j])
+    print(s)
 # номер 1 вариант 9
 a = [[6, 9, 2], [12, 15, 17], [3, 18, 7]]
 k = 3
