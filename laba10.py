@@ -13,5 +13,5 @@ for i in getMtrx("Попов Семён Максимович_УБ-51_vvod.txt"):
         st = i
 print("строка с макс числом: " + str(st) + "сумма строки: " + str(maxSum))
 
-f = open("хуй.txt", 'w', encoding="utf-8")
+f = open("Попов Семён Максимович_УБ-51_vivod.txt", 'w', encoding="utf-8")
 f.write("строка с макс числом: " + str(st) + "сумма строки: " + str(maxSum))
