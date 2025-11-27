@@ -41,3 +41,14 @@ def diag(matr):
             print(matr[i][j])
     return "готово"
 print(diag(a))
+# номер 1 вариант 9
+a = [[6, 9, 2], [12, 15, 17], [3, 18, 7]]
+k = 3
+maks = 0
+b = 0
+for i in a:
+    for j in i:
+        if j % k == 0:
+            b += 1
+        maks = max(j, maks)
+print('количество элементов кратных k: ',b, 'наибольший из этих элементов: ', maks)
