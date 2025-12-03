@@ -28,3 +28,35 @@ points = [(1, 2), (5, 5), (0, 0), (6, 0)]
 
 cnt = count(points, a, b, R)
 print(cnt)
+
+#9 1
+def sumcifr(n):
+    if n < 10:
+        return n
+    if n > 9:
+        return n%10 + sumcifr(n//10)
+a = 21
+cnt = 0
+while a > 0:
+    a = a - sumcifr(a)
+    cnt += 1
+print(a, cnt)
+
+#9 2
+def proiz(n):
+    a = 1
+    for i in n:
+        a *= i
+    return a
+
+def srar(n):
+    b = 0
+    for i in n:
+        b += i
+    return b/len(n)
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = [7, 8, 9]
+print("Массив a: ", proiz(a), srar(a))
+print("Массив b: ", proiz(b), srar(b))
+print("Массив c: ", proiz(c), srar(c))
